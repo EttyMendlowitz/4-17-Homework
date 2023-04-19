@@ -1,0 +1,18 @@
+﻿@model ImageViewModel
+<div class="row">
+   
+    <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+        @if (TempData["Message"] != null)
+        {
+            <h3 class="alert-danger">@TempData["Message"]</h3>
+        }
+        <h4>Please enter the password for this image:</h4>
+        <form method="post" action="/home/CheckPassword">
+            <input type="hidden" name="id" value="@Model.Image.Id" />
+            <input type="text" class="form-control" placeholder="Password" name="password" />
+            <br />
+            <button class="btn btn-primary w-100">Submit</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GpFy_uQ3T1Bq_WQtiUN9YNvopoeo9vUUj6cieef5AaG5_O1X6ruAePpxaSMsdXoQygCDAIVK3iOuuBE0cK72nIGDOM5hXqd8ezmO4pNWWqhGiv3yaP67nbZ0bMQtlLxth3VIamBa4O0gPRg6cXQAvg" />
+        </form>
+    </div>
+</div>
